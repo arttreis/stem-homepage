@@ -3,7 +3,8 @@
   top: 0;
   z-index: var(--z-header);
   background: var(--color-white);
-  border-bottom: 1px solid var(--color-bg-light);
+  border-bottom: 1px solid var(--color-border-light);
+  backdrop-filter: blur(8px);
 }
 
 .inner {
@@ -20,7 +21,7 @@
   font-size: var(--font-size-2xl);
   font-weight: 700;
   color: var(--color-primary);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 .nav {
@@ -33,25 +34,26 @@
   font-weight: 500;
   color: var(--color-text-secondary);
   transition: color var(--duration-fast) ease;
+  position: relative;
 }
 
 .navLink:hover {
-  color: var(--color-primary);
+  color: var(--color-text-primary);
 }
 
 .navLinkActive {
   color: var(--color-primary);
-  position: relative;
 }
 
 .navLinkActive::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: -6px;
   left: 0;
   right: 0;
   height: 2px;
   background: var(--color-primary);
+  border-radius: var(--radius-pill);
 }
 
 .headerCta {
@@ -61,13 +63,13 @@
   color: var(--color-white);
   font-size: var(--font-size-sm);
   font-weight: 600;
-  border-radius: var(--radius-none);
-  transition: background var(--duration-fast) ease, transform var(--duration-normal) var(--ease-bouncy);
+  border-radius: var(--radius-pill);
+  transition: background var(--duration-fast) ease, transform var(--duration-normal) var(--ease-bounce);
 }
 
 .headerCta:hover {
   background: var(--color-primary-dark);
-  transform: scale(1.02);
+  transform: translateY(-1px);
 }
 
 .hamburger {
@@ -79,10 +81,11 @@
 
 .hamburger span {
   display: block;
-  width: 24px;
+  width: 22px;
   height: 2px;
   background: var(--color-text-primary);
-  transition: transform var(--duration-normal) var(--ease-bouncy);
+  border-radius: 2px;
+  transition: transform var(--duration-normal) var(--ease-bounce), opacity var(--duration-fast) ease;
 }
 
 .hamburgerOpen span:nth-child(1) {
@@ -100,32 +103,31 @@
 .mobileNav {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
   padding: 0 var(--container-padding);
   background: var(--color-white);
-  border-bottom: 1px solid transparent;
   max-height: 0;
   overflow: hidden;
-  transition: max-height var(--duration-normal) ease, padding var(--duration-normal) ease, border-color var(--duration-fast) ease;
+  transition: max-height var(--duration-normal) ease, padding var(--duration-normal) ease;
 }
 
 .mobileNavOpen {
-  max-height: 400px;
+  max-height: 420px;
   padding: var(--space-5) var(--container-padding);
-  border-bottom-color: var(--color-bg-light);
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 .mobileNavLink {
   font-size: var(--font-size-lg);
   font-weight: 500;
   color: var(--color-text-primary);
-  padding: var(--space-2) 0;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border-light);
   transition: color var(--duration-fast) ease;
 }
 
 .mobileNavLinkActive {
   color: var(--color-primary);
-  font-weight: 600;
 }
 
 .mobileCta {
@@ -136,8 +138,7 @@
   background: var(--color-primary);
   color: var(--color-white);
   font-weight: 600;
-  font-size: var(--font-size-base);
-  border-radius: var(--radius-none);
+  border-radius: var(--radius-pill);
 }
 
 @media (min-width: 1024px) {

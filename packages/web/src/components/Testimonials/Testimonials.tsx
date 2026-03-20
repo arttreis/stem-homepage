@@ -20,20 +20,23 @@ export function Testimonials() {
     const slider = sliderRef.current
     if (!slider) return
     const scrollLeft = slider.scrollLeft
-    const cardWidth = (slider.children[0] as HTMLElement | undefined)?.offsetWidth ?? 340
+    const cardWidth = (slider.children[0] as HTMLElement | undefined)?.offsetWidth ?? 360
     setActiveIndex(Math.round(scrollLeft / (cardWidth + 24)))
   }
 
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <h2 className={styles.title}>O que dizem sobre nós</h2>
+        <span className={styles.label}>Depoimentos</span>
+        <h2 className={styles.title}>O que dizem sobre nos</h2>
         <p className={styles.subtitle}>Profissionais e clientes que confiam na Stem</p>
         <div className={styles.slider} ref={sliderRef} onScroll={handleScroll}>
           {testimonials.map((t) => (
             <article key={t.id} className={styles.card}>
-              <div className={styles.quote}>&ldquo;</div>
-              <p className={styles.content}>{t.content}</p>
+              <div className={styles.stars}>
+                {'★★★★★'}
+              </div>
+              <p className={styles.content}>&ldquo;{t.content}&rdquo;</p>
               <div className={styles.author}>
                 <div className={styles.avatar}>{t.avatar}</div>
                 <div>

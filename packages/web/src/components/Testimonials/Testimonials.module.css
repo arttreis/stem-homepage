@@ -1,28 +1,52 @@
 .section {
   padding: var(--space-11) 0;
-  background: var(--color-bg-dark);
+  background: var(--color-primary);
   color: var(--color-text-inverse);
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  top: -100px;
+  right: -100px;
 }
 
 .container {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-padding);
+  position: relative;
+  z-index: 1;
+}
+
+.label {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: var(--space-3);
 }
 
 .title {
   font-size: var(--font-size-3xl);
   font-weight: 700;
-  text-align: center;
   margin-bottom: var(--space-3);
   letter-spacing: -0.02em;
 }
 
 .subtitle {
-  font-size: var(--font-size-lg);
-  color: rgba(255, 255, 255, 0.6);
-  text-align: center;
-  margin-bottom: var(--space-9);
+  font-size: var(--font-size-base);
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: var(--space-8);
+  max-width: 480px;
 }
 
 .slider {
@@ -40,30 +64,34 @@
 }
 
 .card {
-  flex: 0 0 340px;
+  flex: 0 0 360px;
   scroll-snap-align: start;
   padding: var(--space-6);
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: var(--radius-none);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   transition: background var(--duration-fast) ease;
 }
 
 .card:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.15);
 }
 
-.quote {
-  font-size: var(--font-size-2xl);
-  color: var(--color-accent);
-  line-height: 1;
-  margin-bottom: var(--space-3);
+.stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: var(--space-4);
+  color: #FFD700;
+  font-size: var(--font-size-sm);
 }
 
 .content {
   font-size: var(--font-size-base);
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: var(--space-5);
+  font-style: italic;
 }
 
 .author {
@@ -76,7 +104,7 @@
   width: 44px;
   height: 44px;
   border-radius: var(--radius-full);
-  background: var(--color-primary);
+  background: rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,36 +121,37 @@
 
 .authorRole {
   font-size: var(--font-size-xs);
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .dots {
   display: flex;
   justify-content: center;
   gap: var(--space-2);
-  margin-top: var(--space-6);
+  margin-top: var(--space-7);
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.25);
-  transition: background var(--duration-fast) ease, transform var(--duration-normal) var(--ease-bouncy);
+  background: rgba(255, 255, 255, 0.3);
+  transition: background var(--duration-fast) ease, width var(--duration-normal) var(--ease-bounce);
 }
 
 .dot:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .dotActive {
-  background: var(--color-accent);
-  transform: scale(1.2);
+  background: var(--color-white);
+  width: 24px;
+  border-radius: var(--radius-pill);
 }
 
 @media (max-width: 768px) {
   .card {
-    flex: 0 0 280px;
+    flex: 0 0 300px;
   }
 
   .title {

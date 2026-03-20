@@ -2,15 +2,6 @@ import styles from './Footer.module.css'
 
 const columns = [
   {
-    title: 'Sobre',
-    links: [
-      { label: 'Quem Somos', href: '#about' },
-      { label: 'Nossa História', href: '#' },
-      { label: 'Ciência & Qualidade', href: '#' },
-      { label: 'Trabalhe Conosco', href: '#' },
-    ],
-  },
-  {
     title: 'Categorias',
     links: [
       { label: 'Beauty', href: '#' },
@@ -20,12 +11,21 @@ const columns = [
     ],
   },
   {
+    title: 'Institucional',
+    links: [
+      { label: 'Quem Somos', href: '#about' },
+      { label: 'Nossa Historia', href: '#' },
+      { label: 'Ciencia & Qualidade', href: '#' },
+      { label: 'Trabalhe Conosco', href: '#' },
+    ],
+  },
+  {
     title: 'Suporte',
     links: [
       { label: 'Central de Ajuda', href: '#' },
-      { label: 'Trocas e Devoluções', href: '#' },
+      { label: 'Trocas e Devolucoes', href: '#' },
       { label: 'Rastrear Pedido', href: '#' },
-      { label: 'Política de Privacidade', href: '#' },
+      { label: 'Politica de Privacidade', href: '#' },
     ],
   },
 ]
@@ -34,18 +34,12 @@ export function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.grid}>
-        {columns.map((col) => (
-          <div key={col.title}>
-            <h4 className={styles.columnTitle}>{col.title}</h4>
-            {col.links.map((link) => (
-              <a key={link.label} href={link.href} className={styles.link}>
-                {link.label}
-              </a>
-            ))}
-          </div>
-        ))}
-        <div>
-          <h4 className={styles.columnTitle}>Social</h4>
+        <div className={styles.brand}>
+          <div className={styles.brandLogo}>STEM</div>
+          <p className={styles.brandDesc}>
+            Suplementos de alta qualidade baseados em ciencia.
+            Transformando saude desde 2016.
+          </p>
           <div className={styles.social}>
             <a href="#" className={styles.socialIcon} aria-label="Instagram">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
@@ -64,9 +58,19 @@ export function Footer() {
             </a>
           </div>
         </div>
+        {columns.map((col) => (
+          <div key={col.title}>
+            <h4 className={styles.columnTitle}>{col.title}</h4>
+            {col.links.map((link) => (
+              <a key={link.label} href={link.href} className={styles.link}>
+                {link.label}
+              </a>
+            ))}
+          </div>
+        ))}
       </div>
       <div className={styles.copyright}>
-        &copy; 2026 Stem Suplementos. Todos os direitos reservados. CNPJ: 00.000.000/0001-00
+        &copy; 2026 Stem Suplementos. Todos os direitos reservados.
       </div>
     </footer>
   )

@@ -6,7 +6,10 @@ export function Blog() {
     <section id="blog" className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Blog</h2>
+          <div className={styles.headerLeft}>
+            <div className={styles.label}>Conteudo</div>
+            <h2 className={styles.title}>Blog</h2>
+          </div>
           <a href="#" className={styles.viewAll}>Ver todos &rarr;</a>
         </div>
         <div className={styles.grid}>

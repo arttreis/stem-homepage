@@ -9,7 +9,10 @@ export function ProductShelf() {
   return (
     <section id="products" className={styles.section}>
       <div className={styles.header}>
-        <h2 className={styles.title}>Mais Vendidos</h2>
+        <div className={styles.headerLeft}>
+          <div className={styles.label}>Destaques</div>
+          <h2 className={styles.title}>Mais Vendidos</h2>
+        </div>
         <a href="#" className={styles.viewAll}>Ver todos &rarr;</a>
       </div>
       <div className={styles.shelf}>
@@ -29,17 +32,19 @@ export function ProductShelf() {
                 <span className={styles.badge}>{product.badge}</span>
               )}
             </div>
-            <span className={styles.category}>{product.category}</span>
-            <h3 className={styles.name}>{product.name}</h3>
-            <div className={styles.priceRow}>
-              <span className={styles.price}>{formatPrice(product.price)}</span>
-              {product.originalPrice && (
-                <span className={styles.originalPrice}>
-                  {formatPrice(product.originalPrice)}
-                </span>
-              )}
+            <div className={styles.cardBody}>
+              <span className={styles.category}>{product.category}</span>
+              <h3 className={styles.name}>{product.name}</h3>
+              <div className={styles.priceRow}>
+                <span className={styles.price}>{formatPrice(product.price)}</span>
+                {product.originalPrice && (
+                  <span className={styles.originalPrice}>
+                    {formatPrice(product.originalPrice)}
+                  </span>
+                )}
+              </div>
+              <button className={styles.addToCart}>Comprar</button>
             </div>
-            <button className={styles.addToCart}>Comprar</button>
           </article>
         ))}
       </div>

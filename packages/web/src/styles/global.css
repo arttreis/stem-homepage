@@ -18,33 +18,13 @@ main {
   flex: 1;
 }
 
-.container {
-  width: 100%;
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
-}
-
-.section {
-  padding: var(--space-11) 0;
-}
-
 /* A11y: Focus-visible styles */
 :focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
-button:focus-visible,
-a:focus-visible,
-input:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
-
-/* Sections are always visible — no opacity-based animations */
-
-/* Skip nav for A11y */
+/* Skip nav */
 .skipNav {
   position: absolute;
   top: -100%;
@@ -54,7 +34,7 @@ input:focus-visible {
   background: var(--color-primary);
   color: var(--color-white);
   font-weight: 600;
-  border-radius: var(--radius-none);
+  border-radius: var(--radius-md);
 }
 
 .skipNav:focus {
@@ -63,11 +43,6 @@ input:focus-visible {
 
 @media (max-width: 768px) {
   :root {
-    --section-gap: 80px;
     --container-padding: 16px;
-  }
-
-  .section {
-    padding: var(--space-9) 0;
   }
 }

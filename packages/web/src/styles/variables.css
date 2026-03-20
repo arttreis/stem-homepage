@@ -1,19 +1,27 @@
 :root {
-  /* Cores Stem */
+  /* Cores Stem — adaptadas ao warmth TRUE */
   --color-primary: #008DD2;
   --color-primary-dark: #006FA6;
   --color-primary-light: #33A8E0;
   --color-accent: #61CE70;
   --color-accent-dark: #4DB85C;
+  --color-accent-light: #e8f9eb;
 
-  /* Neutrals TRUE-style */
+  /* Warm neutrals — TRUE aesthetic */
   --color-white: #FFFFFF;
-  --color-bg-light: #F3F3F3;
-  --color-bg-dark: #242833;
+  --color-cream: #FAF7F4;
+  --color-cream-dark: #F0EBE5;
+  --color-bg-warm: #FDF9F5;
+  --color-bg-dark: #1A1D23;
+  --color-bg-dark-soft: #242833;
+  --color-border: #E8E4DF;
+  --color-border-light: #F0ECE7;
+
+  /* Text */
   --color-text-primary: #1A1A1A;
-  --color-text-secondary: #666666;
+  --color-text-secondary: #5A5A5A;
   --color-text-inverse: #FFFFFF;
-  --color-text-muted: #999999;
+  --color-text-muted: #8C8C8C;
 
   /* Spacing grid 8px */
   --space-1: 4px;
@@ -29,31 +37,42 @@
   --space-11: 96px;
   --space-12: 120px;
 
-  /* Typography - Inter */
+  /* Typography */
   --font-family: 'Inter', sans-serif;
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
-  --font-size-xl: 1.5rem;
-  --font-size-2xl: 2rem;
-  --font-size-3xl: 2.5rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.75rem;
+  --font-size-3xl: 2.25rem;
   --font-size-4xl: 3rem;
+  --font-size-5xl: 3.5rem;
 
-  /* TRUE: radius 0 por padrao */
-  --radius-none: 0px;
-  --radius-sm: 4px;
+  /* TRUE: rounded corners */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
   --radius-full: 50%;
+  --radius-pill: 999px;
 
-  /* TRUE: bouncy ease */
-  --ease-bouncy: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --duration-fast: 0.2s;
+  /* Smooth ease */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 0.15s;
   --duration-normal: 0.3s;
+  --duration-slow: 0.5s;
+
+  /* Soft shadows — TRUE style */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.05);
 
   /* Layout */
   --container-max: 1280px;
   --container-padding: 24px;
-  --section-gap: 120px;
 
   /* Z-index */
   --z-header: 100;
