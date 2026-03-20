@@ -1,4 +1,5 @@
 import { products } from '../../data/products'
+import { useFadeIn } from '../../hooks/useFadeIn'
 import styles from './ProductShelf.module.css'
 
 function formatPrice(value: number): string {
@@ -6,8 +7,10 @@ function formatPrice(value: number): string {
 }
 
 export function ProductShelf() {
+  const ref = useFadeIn<HTMLElement>()
+
   return (
-    <section id="products" className={styles.section}>
+    <section id="products" className={`${styles.section} fadeInUp`} ref={ref}>
       <div className={styles.header}>
         <h2 className={styles.title}>Mais Vendidos</h2>
         <a href="#" className={styles.viewAll}>Ver todos &rarr;</a>
@@ -22,6 +25,9 @@ export function ProductShelf() {
                 className={styles.image}
                 loading="lazy"
               />
+              <div className={styles.overlay}>
+                <span className={styles.overlayBtn}>Ver Produto</span>
+              </div>
               {product.badge && (
                 <span className={styles.badge}>{product.badge}</span>
               )}
@@ -36,6 +42,7 @@ export function ProductShelf() {
                 </span>
               )}
             </div>
+            <button className={styles.addToCart}>Comprar</button>
           </article>
         ))}
       </div>

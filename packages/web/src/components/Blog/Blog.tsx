@@ -1,9 +1,12 @@
 import { blogPosts } from '../../data/blogPosts'
+import { useFadeIn } from '../../hooks/useFadeIn'
 import styles from './Blog.module.css'
 
 export function Blog() {
+  const ref = useFadeIn<HTMLElement>()
+
   return (
-    <section id="blog" className={styles.section}>
+    <section id="blog" className={`${styles.section} fadeInUp`} ref={ref}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>Blog</h2>
@@ -12,12 +15,14 @@ export function Blog() {
         <div className={styles.grid}>
           {blogPosts.map((post) => (
             <a key={post.id} href={post.href} className={styles.card}>
-              <img
-                src={post.image}
-                alt={post.title}
-                className={styles.image}
-                loading="lazy"
-              />
+              <div className={styles.imageWrapper}>
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className={styles.image}
+                  loading="lazy"
+                />
+              </div>
               <div className={styles.cardBody}>
                 <div className={styles.meta}>
                   <span className={styles.categoryTag}>{post.category}</span>

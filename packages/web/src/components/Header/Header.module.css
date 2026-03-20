@@ -39,6 +39,37 @@
   color: var(--color-primary);
 }
 
+.navLinkActive {
+  color: var(--color-primary);
+  position: relative;
+}
+
+.navLinkActive::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-primary);
+}
+
+.headerCta {
+  display: none;
+  padding: var(--space-2) var(--space-5);
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  border-radius: var(--radius-none);
+  transition: background var(--duration-fast) ease, transform var(--duration-normal) var(--ease-bouncy);
+}
+
+.headerCta:hover {
+  background: var(--color-primary-dark);
+  transform: scale(1.02);
+}
+
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -67,16 +98,21 @@
 }
 
 .mobileNav {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: var(--space-4);
-  padding: var(--space-5) var(--container-padding);
+  padding: 0 var(--container-padding);
   background: var(--color-white);
-  border-bottom: 1px solid var(--color-bg-light);
+  border-bottom: 1px solid transparent;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--duration-normal) ease, padding var(--duration-normal) ease, border-color var(--duration-fast) ease;
 }
 
 .mobileNavOpen {
-  display: flex;
+  max-height: 400px;
+  padding: var(--space-5) var(--container-padding);
+  border-bottom-color: var(--color-bg-light);
 }
 
 .mobileNavLink {
@@ -84,11 +120,33 @@
   font-weight: 500;
   color: var(--color-text-primary);
   padding: var(--space-2) 0;
+  transition: color var(--duration-fast) ease;
+}
+
+.mobileNavLinkActive {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.mobileCta {
+  display: block;
+  text-align: center;
+  padding: var(--space-3) 0;
+  margin-top: var(--space-2);
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  border-radius: var(--radius-none);
 }
 
 @media (min-width: 1024px) {
   .nav {
     display: flex;
+  }
+
+  .headerCta {
+    display: inline-block;
   }
 
   .hamburger {

@@ -68,6 +68,42 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform var(--duration-normal) ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--duration-normal) ease;
+}
+
+.card:hover .overlay {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.overlayBtn {
+  padding: var(--space-2) var(--space-5);
+  background: var(--color-white);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  border-radius: var(--radius-none);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--duration-normal) ease, transform var(--duration-normal) var(--ease-bouncy);
+}
+
+.card:hover .overlayBtn {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .badge {
@@ -113,6 +149,23 @@
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
   text-decoration: line-through;
+}
+
+.addToCart {
+  width: 100%;
+  margin-top: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  border-radius: var(--radius-none);
+  transition: background var(--duration-fast) ease, transform var(--duration-normal) var(--ease-bouncy);
+}
+
+.addToCart:hover {
+  background: var(--color-primary-dark);
+  transform: scale(1.02);
 }
 
 @media (min-width: 768px) {

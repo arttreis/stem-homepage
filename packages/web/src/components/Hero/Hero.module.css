@@ -54,6 +54,34 @@
   transform: scale(1.02);
 }
 
+.trustBadges {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.badgeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-none);
+  flex-shrink: 0;
+}
+
 @media (max-width: 768px) {
   .hero {
     min-height: 60vh;
@@ -65,5 +93,13 @@
 
   .sub {
     font-size: var(--font-size-lg);
+  }
+
+  .trustBadges {
+    gap: var(--space-4);
+  }
+
+  .badge {
+    font-size: var(--font-size-xs);
   }
 }

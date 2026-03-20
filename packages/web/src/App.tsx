@@ -13,8 +13,11 @@ import { WhatsAppWidget } from './components/WhatsAppWidget/WhatsAppWidget'
 export function App() {
   return (
     <>
+      <a href="#main-content" className="skipNav">
+        Pular para o conteúdo
+      </a>
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <Categories />
         <About />

@@ -1,9 +1,12 @@
 import { categories } from '../../data/categories'
+import { useFadeIn } from '../../hooks/useFadeIn'
 import styles from './Categories.module.css'
 
 export function Categories() {
+  const ref = useFadeIn<HTMLElement>()
+
   return (
-    <section id="categories" className={styles.section}>
+    <section id="categories" className={`${styles.section} fadeInUp`} ref={ref}>
       <div className={styles.container}>
         <h2 className={styles.title}>Nossas Categorias</h2>
         <p className={styles.subtitle}>Soluções para cada objetivo de saúde</p>
@@ -18,6 +21,7 @@ export function Categories() {
                 <div className={styles.cardIcon}>{cat.icon}</div>
                 <h3 className={styles.cardName}>{cat.name}</h3>
                 <p className={styles.cardDesc}>{cat.description}</p>
+                <span className={styles.cardArrow}>Explorar &rarr;</span>
               </div>
             </a>
           ))}

@@ -1,9 +1,12 @@
 import { professionals } from '../../data/professionals'
+import { useFadeIn } from '../../hooks/useFadeIn'
 import styles from './Professionals.module.css'
 
 export function Professionals() {
+  const ref = useFadeIn<HTMLElement>()
+
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} fadeInUp`} ref={ref}>
       <div className={styles.container}>
         <h2 className={styles.title}>Nossos Especialistas</h2>
         <p className={styles.subtitle}>Profissionais que recomendam e confiam na Stem</p>
