@@ -1,0 +1,41 @@
+@import './reset.css';
+@import './variables.css';
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-white);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.section {
+  padding: var(--space-11) 0;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-gap: 80px;
+    --container-padding: 16px;
+  }
+
+  .section {
+    padding: var(--space-9) 0;
+  }
+}

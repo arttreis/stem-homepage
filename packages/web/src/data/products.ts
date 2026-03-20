@@ -1,0 +1,66 @@
+import type { Product } from '../types'
+
+export const products: Product[] = [
+  {
+    id: 'p1',
+    name: 'Colágeno Verisol',
+    category: 'Beauty',
+    price: 89.90,
+    originalPrice: 119.90,
+    image: 'https://placehold.co/300x400/E91E8C/FFF?text=Colageno',
+    badge: '-25%',
+  },
+  {
+    id: 'p2',
+    name: 'Ômega 3 Ultra',
+    category: 'Clinical',
+    price: 79.90,
+    image: 'https://placehold.co/300x400/008DD2/FFF?text=Omega+3',
+  },
+  {
+    id: 'p3',
+    name: 'Whey Protein Isolado',
+    category: 'Performance',
+    price: 199.90,
+    originalPrice: 249.90,
+    image: 'https://placehold.co/300x400/FF6B35/FFF?text=Whey',
+    badge: '-20%',
+  },
+  {
+    id: 'p4',
+    name: 'Multivitamínico Daily',
+    category: 'Nutrition',
+    price: 59.90,
+    image: 'https://placehold.co/300x400/61CE70/FFF?text=Multi',
+  },
+  {
+    id: 'p5',
+    name: 'Biotina Hair & Nails',
+    category: 'Beauty',
+    price: 69.90,
+    image: 'https://placehold.co/300x400/E91E8C/FFF?text=Biotina',
+  },
+  {
+    id: 'p6',
+    name: 'Creatina Monohidratada',
+    category: 'Performance',
+    price: 149.90,
+    originalPrice: 179.90,
+    image: 'https://placehold.co/300x400/FF6B35/FFF?text=Creatina',
+    badge: '-17%',
+  },
+  {
+    id: 'p7',
+    name: 'Vitamina D3 + K2',
+    category: 'Clinical',
+    price: 49.90,
+    image: 'https://placehold.co/300x400/008DD2/FFF?text=Vit+D3',
+  },
+  {
+    id: 'p8',
+    name: 'Proteína Vegana',
+    category: 'Nutrition',
+    price: 129.90,
+    image: 'https://placehold.co/300x400/61CE70/FFF?text=Vegana',
+  },
+]

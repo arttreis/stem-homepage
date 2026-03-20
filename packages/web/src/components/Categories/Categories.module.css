@@ -1,0 +1,94 @@
+.section {
+  padding: var(--space-11) 0;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.title {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-bottom: var(--space-9);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 280px;
+  padding: var(--space-6);
+  color: var(--color-text-inverse);
+  overflow: hidden;
+  border-radius: var(--radius-none);
+  transition: transform var(--duration-normal) var(--ease-bouncy);
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.cardBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transition: transform var(--duration-normal) ease;
+}
+
+.card:hover .cardBg {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+}
+
+.cardIcon {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-3);
+}
+
+.cardName {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+.cardDesc {
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 220px;
+  }
+
+  .title {
+    font-size: var(--font-size-2xl);
+  }
+}
