@@ -1,16 +1,13 @@
 import type { FormEvent } from 'react'
-import { useFadeIn } from '../../hooks/useFadeIn'
 import styles from './Newsletter.module.css'
 
 export function Newsletter() {
-  const ref = useFadeIn<HTMLElement>()
-
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
   }
 
   return (
-    <section id="contact" className={`${styles.section} fadeInUp`} ref={ref}>
+    <section id="contact" className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.title}>Fique por dentro</h2>
         <p className={styles.subtitle}>

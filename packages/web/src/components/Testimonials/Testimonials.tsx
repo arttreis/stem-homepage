@@ -1,10 +1,8 @@
 import { useState, useRef } from 'react'
 import { testimonials } from '../../data/testimonials'
-import { useFadeIn } from '../../hooks/useFadeIn'
 import styles from './Testimonials.module.css'
 
 export function Testimonials() {
-  const ref = useFadeIn<HTMLElement>()
   const sliderRef = useRef<HTMLDivElement>(null)
   const [activeIndex, setActiveIndex] = useState(0)
 
@@ -27,7 +25,7 @@ export function Testimonials() {
   }
 
   return (
-    <section className={`${styles.section} fadeInUp`} ref={ref}>
+    <section className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.title}>O que dizem sobre nós</h2>
         <p className={styles.subtitle}>Profissionais e clientes que confiam na Stem</p>

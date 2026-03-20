@@ -1,5 +1,4 @@
 import { products } from '../../data/products'
-import { useFadeIn } from '../../hooks/useFadeIn'
 import styles from './ProductShelf.module.css'
 
 function formatPrice(value: number): string {
@@ -7,10 +6,8 @@ function formatPrice(value: number): string {
 }
 
 export function ProductShelf() {
-  const ref = useFadeIn<HTMLElement>()
-
   return (
-    <section id="products" className={`${styles.section} fadeInUp`} ref={ref}>
+    <section id="products" className={styles.section}>
       <div className={styles.header}>
         <h2 className={styles.title}>Mais Vendidos</h2>
         <a href="#" className={styles.viewAll}>Ver todos &rarr;</a>

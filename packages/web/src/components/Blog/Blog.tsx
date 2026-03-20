@@ -1,12 +1,9 @@
 import { blogPosts } from '../../data/blogPosts'
-import { useFadeIn } from '../../hooks/useFadeIn'
 import styles from './Blog.module.css'
 
 export function Blog() {
-  const ref = useFadeIn<HTMLElement>()
-
   return (
-    <section id="blog" className={`${styles.section} fadeInUp`} ref={ref}>
+    <section id="blog" className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>Blog</h2>

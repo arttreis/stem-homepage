@@ -1,11 +1,8 @@
-import { useFadeIn } from '../../hooks/useFadeIn'
 import styles from './About.module.css'
 
 export function About() {
-  const ref = useFadeIn<HTMLElement>()
-
   return (
-    <section id="about" className={`${styles.section} fadeInUp`} ref={ref}>
+    <section id="about" className={styles.section}>
       <div className={styles.container}>
         <div className={styles.imageWrapper}>
           <span className={styles.imagePlaceholder}>STEM</span>
